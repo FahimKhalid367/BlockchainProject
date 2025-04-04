@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container mt-4">
+    <h2 class="page-title text-center">BlockConnect Dashboard</h2>
+
+    <!-- Welcome + Wallet Key -->
+    <div class="card p-4 mt-3 mb-4">
+      <h4 id="welcomeMessage">Welcome, User!</h4>
+      <p class="text-muted">This is your private wallet key. Keep it safe:</p>
+      <pre id="walletKey" class="bg-light border rounded p-2 text-monospace"></pre>
+      <div class="mt-3">
+        <a href="reset-password.html" class="btn btn-warning">Reset Password</a>
+        <a href="login.html" class="btn btn-secondary" onclick="logout()">Log Out</a>
+      </div>
+    </div>
+
+    <!-- Post Form -->
+    <div class="card p-4 mb-4">
+      <h5>Create a new statement</h5>
+      <form id="postForm" enctype="multipart/form-data">
+        <textarea id="postContent" class="form-control mb-3" placeholder="What would you like to share?" required></textarea>
+        <button type="submit" class="btn btn-primary">Post</button>
+      </form>
+    </div>
+
+    <!-- Your Posts -->
+    <div class="mb-4">
+      <h5>Your Posts</h5>
+      <div id="yourPosts" class="timeline"></div>
+    </div>
+
+    <!-- Shared Timeline -->
+    <div class="mb-4">
+      <h5>Community Timeline</h5>
+      <div id="timeline" class="timeline"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to external JS file -->
+  <script src="dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+body {
+    background-color: #3674B5;
+}
+
+.page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:900;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    color: #fffcfc;
+    text-shadow: 1.4px 2.9px 2.9px hsl(0deg 0% 0% / 0.46);
+    
+}
+
+.sign-up-title {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+    
+}
+
+.sign-up-container {
+    box-shadow: 1.4px 2.9px 2.9px hsl(0deg 0% 0% / 0.46);
+    align-content: center;
+    
+}
+
+.sign-up-title {
+    text-align: left;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+
+
+.post-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    cursor: pointer;
+    }
