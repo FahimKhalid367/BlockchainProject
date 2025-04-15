@@ -10,13 +10,25 @@ const client = new MongoClient(uri, {
   }
 });
 
+// async function connectToMongoDB() {
+//   if (!client.topology?.isConnected()) {
+//     await client.connect();
+//     console.log("Connected to MongoDB");
+//   }
+//   return client.db("BlockchainProject");
+// }
+
 async function connectToMongoDB() {
-  if (!client.topology?.isConnected()) {
+  try {
     await client.connect();
     console.log("Connected to MongoDB");
+    return client.db("BlockchainProject");
+  } catch (error) {
+    console.error("MongoDB connection error:", error);
+    throw error;
   }
-  return client.db("BlockchainProject");
 }
+
 
 module.exports = connectToMongoDB;
 

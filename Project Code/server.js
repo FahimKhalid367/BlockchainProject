@@ -11,7 +11,7 @@ const { ObjectId } = require('mongodb');
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 
-// 📬 Configure Nodemailer for MailerSend SMTP
+// Configure Nodemailer for MailerSend SMTP
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
   port: parseInt(process.env.EMAIL_PORT),
@@ -28,6 +28,12 @@ const transporter = nodemailer.createTransport({
 // Create an instance of the Express application
 const app = express();
 const PORT = 3001;
+
+
+//Remove when testing using Jest as Jest will not work due to two instances of the same server running
+app.listen(PORT, () => {
+  console.log(`Server is listening on http://localhost:${PORT}`);
+});
 
 module.exports = app;
 
@@ -107,7 +113,7 @@ async function saveUserData(username, email, password) {
 app.post('/login', async (req, res) => {
     const { username, password, walletKey } = req.body;
     // Simulated IP address for testing location
-    const loginIP = '23.54.0.1'; // 🇬🇧 London
+    const loginIP = '5.6.7.8'; // 🇬🇧 London, change IP address to test Wallet Key authentication process
     const loginLocation = geoip.lookup(loginIP); // Will return city + country
     console.log("Simulated login from:", loginLocation);
 
